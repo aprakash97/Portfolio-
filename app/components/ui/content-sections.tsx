@@ -1,6 +1,7 @@
 'use client';
 
 import { Briefcase, GraduationCap, FolderOpen, Code, Mail, User } from 'lucide-react';
+import Link from 'next/link';
 
 export function AboutSection() {
   return (
@@ -118,7 +119,11 @@ export function ProjectsSection() {
       </div>
       <div className="grid gap-4 sm:grid-cols-2">
         {projects.map((project, index) => (
-          <div
+          <Link
+            href={'https://modern-summary-app.vercel.app/'}
+            onClick={(event) => event.stopPropagation()}
+            target="_blank"
+            rel="noopener noreferrer"
             key={index}
             className="border-border bg-card/50 rounded-lg border p-4 transition-shadow hover:shadow-md"
           >
@@ -127,7 +132,7 @@ export function ProjectsSection() {
             <p className="text-muted-foreground mt-2 text-sm leading-relaxed">
               {project.description}
             </p>
-          </div>
+          </Link>
         ))}
       </div>
     </div>
