@@ -108,6 +108,7 @@ export function ProjectsSection() {
       name: 'Blog Platform',
       tech: 'Next, Redis, Neon',
       description: 'A simple blogging application with modern AI features integration.',
+      link: 'https://modern-summary-app.vercel.app/',
     },
   ];
 
@@ -120,7 +121,7 @@ export function ProjectsSection() {
       <div className="grid gap-4 sm:grid-cols-2">
         {projects.map((project, index) => (
           <Link
-            href={'https://modern-summary-app.vercel.app/'}
+            href={project.link}
             onClick={(event) => event.stopPropagation()}
             target="_blank"
             rel="noopener noreferrer"
