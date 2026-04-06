@@ -133,6 +133,7 @@ export function ProjectsSection() {
             <p className="text-muted-foreground mt-2 text-sm leading-relaxed">
               {project.description}
             </p>
+            <p className="text-sm font-bold">Click here to view the app!</p>
           </Link>
         ))}
       </div>
