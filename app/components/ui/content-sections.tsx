@@ -114,7 +114,7 @@ export function ProjectsSection() {
       name: 'CMS Website',
       tech: 'Contentful, CMS, Next, GraphQL',
       description: 'A marketing-focused website built with Contentful CMS and GraphQL, enabling dynamic content management and fast, flexible content delivery.',
-      link: 'headless-nextjs.akrhub.co'
+      link: 'https://headless-nextjs.akrhub.co'
     }
   ];
 
