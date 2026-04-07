@@ -110,6 +110,12 @@ export function ProjectsSection() {
       description: 'A simple blogging application with modern AI features integration.',
       link: 'https://modern-summary-app.vercel.app/',
     },
+    {
+      name: 'CMS Website',
+      tech: 'Contentful, CMS, Next, GraphQL',
+      description: 'A marketing-focused website built with Contentful CMS and GraphQL, enabling dynamic content management and fast, flexible content delivery.',
+      link: 'headless-nextjs.akrhub.co'
+    }
   ];
 
   return (
