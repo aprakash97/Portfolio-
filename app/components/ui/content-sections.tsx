@@ -106,15 +106,21 @@ export function ProjectsSection() {
   const projects = [
     {
       name: 'Blog Platform',
-      tech: 'Next, Redis, Neon',
+      tech: 'Next Js, Redis, Neon',
       description: 'A simple blogging application with modern AI features integration.',
       link: 'https://modern-summary-app.vercel.app/',
     },
     {
       name: 'CMS Website',
-      tech: 'Contentful, CMS, Next, GraphQL',
+      tech: 'Contentful, CMS, Next Js, GraphQL',
       description: 'A marketing-focused website built with Contentful CMS and GraphQL, enabling dynamic content management and fast, flexible content delivery.',
       link: 'headless-nextjs.akrhub.co'
+    },
+    {
+      name: 'Diagram Tool',
+      tech: 'React, CloudFlare Worker, Open AI',
+      description: 'An AI chat agent for understanding tech concepts through diagrams.',
+      link: 'https://ai-design-tool.prakashakrakr.workers.dev/',
     }
   ];
 
