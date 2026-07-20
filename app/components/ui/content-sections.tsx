@@ -111,17 +111,18 @@ export function ProjectsSection() {
       link: 'https://modern-summary-app.vercel.app/',
     },
     {
-      name: 'CMS Website',
-      tech: 'Contentful, CMS, Next Js, GraphQL',
-      description: 'A marketing-focused website built with Contentful CMS and GraphQL, enabling dynamic content management and fast, flexible content delivery.',
-      link: 'headless-nextjs.akrhub.co'
-    },
-    {
       name: 'Diagram Tool',
       tech: 'React, CloudFlare Worker, Open AI',
       description: 'An AI chat agent for understanding tech concepts through diagrams.',
       link: 'https://ai-design-tool.prakashakrakr.workers.dev/',
-    }
+    },
+    {
+      name: 'CMS Website',
+      tech: 'Contentful, CMS, Next Js, GraphQL',
+      description:
+        'A marketing-focused website built with Contentful CMS and GraphQL, enabling dynamic content management and fast, flexible content delivery.',
+      link: 'https://headless-nextjs.akrhub.co',
+    },
   ];
 
   return (
