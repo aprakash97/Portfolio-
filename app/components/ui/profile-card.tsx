@@ -27,12 +27,14 @@ export function ProfileCard({
   instagram,
 }: ProfileCardProps) {
   return (
-    <div className="bg-card flex h-full flex-col justify-between rounded-lg p-6 lg:p-8">
+    <div className="bg-card flex h-full min-h-0 flex-col justify-between overflow-y-auto rounded-lg p-6 lg:p-8">
       <div>
-        <h1 className="text-card-foreground text-2xl font-bold lg:text-3xl">{name}</h1>
+        <h1 className="text-2xl font-bold text-slate-900 lg:text-3xl dark:text-slate-900">
+          {name}
+        </h1>
         <p className="text-muted-foreground mt-1 text-lg">{title}</p>
 
-        <div className="relative mx-auto my-6 aspect-square w-full max-w-[320px] overflow-hidden rounded-lg lg:my-8">
+        <div className="relative mx-auto my-6 aspect-square w-full max-w-[220px] overflow-hidden rounded-full lg:my-8">
           <div className="absolute inset-0 z-10 bg-gradient-to-br from-cyan-400/60 via-transparent to-rose-500/60" />
           <Image src={imageUrl} alt={name} fill className="object-cover" crossOrigin="anonymous" />
         </div>

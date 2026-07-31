@@ -51,10 +51,10 @@ export function Portfolio({ theme }: PortfolioProps) {
   };
 
   return (
-    <div className="w-full min-h-screen p-4 lg:p-8">
-      <div className="mx-auto grid w-full max-w-7xl gap-6 lg:grid-cols-[400px_1fr] lg:gap-8">
+    <div className="min-h-screen w-full p-4 lg:p-8">
+      <div className="mx-auto grid min-h-screen w-full max-w-7xl gap-6 lg:grid-cols-[400px_1fr] lg:gap-8">
         {/* Left Section - Profile Card */}
-        <aside className="h-fit lg:sticky lg:top-8">
+        <aside className="lg:sticky lg:top-8 lg:max-h-[calc(100vh-4rem)] lg:min-h-0 lg:self-start lg:overflow-y-auto">
           <ProfileCard {...profileData} />
         </aside>
 

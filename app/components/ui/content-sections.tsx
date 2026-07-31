@@ -20,14 +20,16 @@ export function AboutSection() {
 
       <div className="bg-card/70 border-border rounded-2xl border p-6 shadow-sm">
         <p className="text-muted-foreground leading-relaxed">
-          I am a passionate Software Engineer with expertise in building scalable web applications
-          and solving complex problems. With a strong foundation in modern technologies and a keen
-          eye for detail, I strive to create efficient and user-friendly solutions.
+          I’m a passionate Software Engineer who enjoys building scalable, user-friendly web
+          applications and turning ideas into practical solutions. My journey in software
+          development started with HTML, CSS, and JavaScript, where I discovered how much I enjoyed
+          bringing interfaces and ideas to life.
         </p>
         <p className="text-muted-foreground mt-4 leading-relaxed">
-          My journey in software development started with curiosity about how things work, and it
-          has evolved into a fulfilling career where I get to build products that make a difference.
-          I believe in continuous learning and staying updated with the latest industry trends.
+          Then expanded my skills beyond frontend development by exploring backend technologies,
+          cloud services, and application deployment. This journey has helped me understand how
+          different parts of an application work together, from creating intuitive user experiences
+          to building APIs and deploying reliable applications.
         </p>
       </div>
     </div>
