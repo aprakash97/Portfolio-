@@ -1,7 +1,8 @@
 'use client';
 
-import { Github, Linkedin, Instagram, ArrowBigRightDash } from 'lucide-react';
+import { Github, Linkedin, Instagram, ArrowBigRightDash, Download } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 interface ProfileCardProps {
   name: string;
@@ -100,6 +101,16 @@ export function ProfileCard({
             </a>
           )}
         </div>
+        <Link
+          className="m-1 my-2 flex min-w-10 justify-center rounded-full bg-blue-700 p-2 text-center text-amber-50"
+          href={'/Prakash_Anandakumar_CV.pdf'}
+          target="_blank"
+        >
+          <p>Resume</p>
+          <div className="mx-1 cursor-pointer">
+            <Download />
+          </div>
+        </Link>
       </div>
     </div>
   );
