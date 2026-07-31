@@ -64,6 +64,7 @@ export function ProfileCard({
           {github && (
             <a
               href={github}
+              title={github}
               target="_blank"
               rel="noopener noreferrer"
               className="text-card-foreground hover:text-primary transition-colors"
@@ -76,6 +77,7 @@ export function ProfileCard({
             <a
               href={linkedin}
               target="_blank"
+              title={linkedin}
               rel="noopener noreferrer"
               className="text-card-foreground hover:text-primary transition-colors"
               aria-label="LinkedIn"
@@ -86,6 +88,7 @@ export function ProfileCard({
           {instagram && (
             <a
               href={instagram}
+              title={instagram}
               target="_blank"
               rel="noopener noreferrer"
               className="text-card-foreground hover:text-primary transition-colors"

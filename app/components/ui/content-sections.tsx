@@ -1,6 +1,6 @@
 'use client';
 
-import { Briefcase, GraduationCap, FolderOpen, Code, Mail, User } from 'lucide-react';
+import { Briefcase, GraduationCap, FolderOpen, Code, Mail, User, ShieldCheck } from 'lucide-react';
 import Link from 'next/link';
 
 export function AboutSection() {
@@ -52,7 +52,7 @@ export function ExperienceSection() {
     },
     {
       title: 'Intern Software Developer',
-      company: 'StartUp Hub',
+      company: 'EFT Global LLC',
       period: '2021 - 2022',
       description:
         'Started my professional journey building MVPs for startups, with initial experience in WordPress site maintenance during my internship',
@@ -108,6 +108,19 @@ export function EducationSection() {
     },
   ];
 
+  const certificates = [
+    {
+      name: 'Azure Fundamentals',
+      institution: 'Microsoft',
+      issuedDate: '2021',
+    },
+    {
+      name: 'Technical Programming Competition - Participant',
+      institution: 'Codegoda',
+      issuedDate: '2022',
+    },
+  ];
+
   return (
     <div className="space-y-6">
       <div className="flex items-center gap-3">
@@ -127,6 +140,29 @@ export function EducationSection() {
             <p className="text-primary mt-1 text-sm font-medium">{edu.institution}</p>
             <p className="text-muted-foreground mt-2 text-xs font-medium tracking-wide uppercase">
               {edu.period}
+            </p>
+          </div>
+        ))}
+      </div>
+
+      <hr />
+      <div className="flex items-center gap-3">
+        <div className="bg-primary/10 text-primary flex h-10 w-10 items-center justify-center rounded-full">
+          <ShieldCheck className="h-5 w-5" />
+        </div>
+        <div>
+          <h2 className="text-foreground text-2xl font-semibold">Certifications</h2>
+          <p className="text-muted-foreground text-sm">Credential for professional expertise</p>
+        </div>
+      </div>
+
+      <div className="space-y-4">
+        {certificates.map((edu, index) => (
+          <div key={index} className="bg-card/70 border-border rounded-2xl border p-5 shadow-sm">
+            <h3 className="text-foreground font-semibold">{edu.name}</h3>
+            <p className="text-primary mt-1 text-sm font-medium">{edu.institution}</p>
+            <p className="text-muted-foreground mt-2 text-xs font-medium tracking-wide uppercase">
+              {edu.issuedDate}
             </p>
           </div>
         ))}
