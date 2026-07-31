@@ -12,9 +12,11 @@ export default function Home() {
   };
 
   return (
-    <div className={`flex ${theme === 'dark' ? 'bg-foreground' : 'bg-background'}`}>
+    <div className={`flex min-h-screen w-full ${theme === 'dark' ? 'bg-foreground' : 'bg-background'}`}>
       <ColorPanel changeTheme={changeTheme} theme={theme} />
-      <Portfolio />
+      <div className="w-full">
+        <Portfolio theme={theme} />
+      </div>
     </div>
   );
 }

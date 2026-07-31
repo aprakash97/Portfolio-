@@ -5,21 +5,31 @@ import Link from 'next/link';
 
 export function AboutSection() {
   return (
-    <div className="space-y-4">
+    <div className="space-y-5">
       <div className="flex items-center gap-3">
-        <User className="text-primary h-6 w-6" />
-        <h2 className="text-foreground text-2xl font-bold">About Me</h2>
+        <div className="bg-primary/10 text-primary flex h-10 w-10 items-center justify-center rounded-full">
+          <User className="h-5 w-5" />
+        </div>
+        <div>
+          <h2 className="text-foreground text-2xl font-semibold">About Me</h2>
+          <p className="text-muted-foreground text-sm">
+            Software engineer crafting modern web experiences
+          </p>
+        </div>
       </div>
-      <p className="text-muted-foreground leading-relaxed">
-        I am a passionate Software Engineer with expertise in building scalable web applications and
-        solving complex problems. With a strong foundation in modern technologies and a keen eye for
-        detail, I strive to create efficient and user-friendly solutions.
-      </p>
-      <p className="text-muted-foreground leading-relaxed">
-        My journey in software development started with curiosity about how things work, and it has
-        evolved into a fulfilling career where I get to build products that make a difference. I
-        believe in continuous learning and staying updated with the latest industry trends.
-      </p>
+
+      <div className="bg-card/70 border-border rounded-2xl border p-6 shadow-sm">
+        <p className="text-muted-foreground leading-relaxed">
+          I am a passionate Software Engineer with expertise in building scalable web applications
+          and solving complex problems. With a strong foundation in modern technologies and a keen
+          eye for detail, I strive to create efficient and user-friendly solutions.
+        </p>
+        <p className="text-muted-foreground mt-4 leading-relaxed">
+          My journey in software development started with curiosity about how things work, and it
+          has evolved into a fulfilling career where I get to build products that make a difference.
+          I believe in continuous learning and staying updated with the latest industry trends.
+        </p>
+      </div>
     </div>
   );
 }
@@ -52,16 +62,31 @@ export function ExperienceSection() {
   return (
     <div className="space-y-6">
       <div className="flex items-center gap-3">
-        <Briefcase className="text-primary h-6 w-6" />
-        <h2 className="text-foreground text-2xl font-bold">Experience</h2>
+        <div className="bg-primary/10 text-primary flex h-10 w-10 items-center justify-center rounded-full">
+          <Briefcase className="h-5 w-5" />
+        </div>
+        <div>
+          <h2 className="text-foreground text-2xl font-semibold">Experience</h2>
+          <p className="text-muted-foreground text-sm">Professional growth and delivery</p>
+        </div>
       </div>
-      <div className="space-y-6">
+
+      <div className="space-y-4">
         {experiences.map((exp, index) => (
-          <div key={index} className="border-primary/30 border-l-2 pl-4">
-            <h3 className="text-foreground font-semibold">{exp.title}</h3>
-            <p className="text-primary text-sm font-medium">{exp.company}</p>
-            <p className="text-muted-foreground text-xs">{exp.period}</p>
-            <p className="text-muted-foreground mt-2 text-sm leading-relaxed">{exp.description}</p>
+          <div
+            key={index}
+            className="bg-card/70 border-border rounded-2xl border p-5 shadow-sm transition-transform duration-200 hover:-translate-y-0.5"
+          >
+            <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+              <div>
+                <h3 className="text-foreground font-semibold">{exp.title}</h3>
+                <p className="text-primary text-sm font-medium">{exp.company}</p>
+              </div>
+              <span className="text-muted-foreground text-xs font-medium tracking-wide uppercase">
+                {exp.period}
+              </span>
+            </div>
+            <p className="text-muted-foreground mt-3 text-sm leading-relaxed">{exp.description}</p>
           </div>
         ))}
       </div>
@@ -86,15 +111,23 @@ export function EducationSection() {
   return (
     <div className="space-y-6">
       <div className="flex items-center gap-3">
-        <GraduationCap className="text-primary h-6 w-6" />
-        <h2 className="text-foreground text-2xl font-bold">Education</h2>
+        <div className="bg-primary/10 text-primary flex h-10 w-10 items-center justify-center rounded-full">
+          <GraduationCap className="h-5 w-5" />
+        </div>
+        <div>
+          <h2 className="text-foreground text-2xl font-semibold">Education</h2>
+          <p className="text-muted-foreground text-sm">Academic foundation and milestones</p>
+        </div>
       </div>
-      <div className="space-y-6">
+
+      <div className="space-y-4">
         {education.map((edu, index) => (
-          <div key={index} className="border-primary/30 border-l-2 pl-4">
+          <div key={index} className="bg-card/70 border-border rounded-2xl border p-5 shadow-sm">
             <h3 className="text-foreground font-semibold">{edu.degree}</h3>
-            <p className="text-primary text-sm font-medium">{edu.institution}</p>
-            <p className="text-muted-foreground text-xs">{edu.period}</p>
+            <p className="text-primary mt-1 text-sm font-medium">{edu.institution}</p>
+            <p className="text-muted-foreground mt-2 text-xs font-medium tracking-wide uppercase">
+              {edu.period}
+            </p>
           </div>
         ))}
       </div>
@@ -128,9 +161,15 @@ export function ProjectsSection() {
   return (
     <div className="space-y-6">
       <div className="flex items-center gap-3">
-        <FolderOpen className="text-primary h-6 w-6" />
-        <h2 className="text-foreground text-2xl font-bold">Projects</h2>
+        <div className="bg-primary/10 text-primary flex h-10 w-10 items-center justify-center rounded-full">
+          <FolderOpen className="h-5 w-5" />
+        </div>
+        <div>
+          <h2 className="text-foreground text-2xl font-semibold">Projects</h2>
+          <p className="text-muted-foreground text-sm">Selected work and product experiments</p>
+        </div>
       </div>
+
       <div className="grid gap-4 sm:grid-cols-2">
         {projects.map((project, index) => (
           <Link
@@ -139,14 +178,21 @@ export function ProjectsSection() {
             target="_blank"
             rel="noopener noreferrer"
             key={index}
-            className="border-border bg-card/50 rounded-lg border p-4 transition-shadow hover:shadow-md"
+            className="bg-card/70 border-border hover:border-primary/40 group rounded-2xl border p-5 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-md"
           >
-            <h3 className="text-foreground font-semibold">{project.name}</h3>
-            <p className="text-primary text-xs font-medium">{project.tech}</p>
-            <p className="text-muted-foreground mt-2 text-sm leading-relaxed">
+            <div className="flex items-start justify-between gap-3">
+              <h3 className="text-foreground font-semibold">{project.name}</h3>
+              <span className="text-primary text-xs font-medium">Live</span>
+            </div>
+            <p className="text-primary mt-2 text-xs font-medium tracking-wide uppercase">
+              {project.tech}
+            </p>
+            <p className="text-muted-foreground mt-3 text-sm leading-relaxed">
               {project.description}
             </p>
-            <p className="text-sm font-bold">Click here to view the app!</p>
+            <p className="text-primary group-hover:text-primary/80 mt-4 text-sm font-semibold transition-colors">
+              Open project →
+            </p>
           </Link>
         ))}
       </div>
@@ -177,13 +223,19 @@ export function SkillsSection() {
   return (
     <div className="space-y-6">
       <div className="flex items-center gap-3">
-        <Code className="text-primary h-6 w-6" />
-        <h2 className="text-foreground text-2xl font-bold">Skills</h2>
+        <div className="bg-primary/10 text-primary flex h-10 w-10 items-center justify-center rounded-full">
+          <Code className="h-5 w-5" />
+        </div>
+        <div>
+          <h2 className="text-foreground text-2xl font-semibold">Skills</h2>
+          <p className="text-muted-foreground text-sm">Core tools and technologies</p>
+        </div>
       </div>
-      <div className="space-y-4">
+
+      <div className="grid gap-4 md:grid-cols-2">
         {skillCategories.map((cat, index) => (
-          <div key={index}>
-            <h3 className="text-foreground mb-2 font-semibold">{cat.category}</h3>
+          <div key={index} className="bg-card/70 border-border rounded-2xl border p-5 shadow-sm">
+            <h3 className="text-foreground mb-3 font-semibold">{cat.category}</h3>
             <div className="flex flex-wrap gap-2">
               {cat.skills.map((skill, skillIndex) => (
                 <span
@@ -205,54 +257,63 @@ export function ContactSection() {
   return (
     <div className="space-y-6">
       <div className="flex items-center gap-3">
-        <Mail className="text-primary h-6 w-6" />
-        <h2 className="text-foreground text-2xl font-bold">Contact</h2>
+        <div className="bg-primary/10 text-primary flex h-10 w-10 items-center justify-center rounded-full">
+          <Mail className="h-5 w-5" />
+        </div>
+        <div>
+          <h2 className="text-foreground text-2xl font-semibold">Contact</h2>
+          <p className="text-muted-foreground text-sm">Let’s build something meaningful</p>
+        </div>
       </div>
-      <p className="text-muted-foreground leading-relaxed">
-        I am always open to discussing new projects, creative ideas, or opportunities to be part of
-        your visions. Feel free to reach out to me!
-      </p>
-      <form className="space-y-4">
-        <div>
-          <label htmlFor="name" className="text-foreground mb-1 block text-sm font-medium">
-            Name
-          </label>
-          <input
-            type="text"
-            id="name"
-            className="border-border bg-background text-foreground focus:border-primary focus:ring-primary w-full rounded-lg border px-4 py-2 focus:ring-1 focus:outline-none"
-            placeholder="Your name"
-          />
-        </div>
-        <div>
-          <label htmlFor="email" className="text-foreground mb-1 block text-sm font-medium">
-            Email
-          </label>
-          <input
-            type="email"
-            id="email"
-            className="border-border bg-background text-foreground focus:border-primary focus:ring-primary w-full rounded-lg border px-4 py-2 focus:ring-1 focus:outline-none"
-            placeholder="your.email@example.com"
-          />
-        </div>
-        <div>
-          <label htmlFor="message" className="text-foreground mb-1 block text-sm font-medium">
-            Message
-          </label>
-          <textarea
-            id="message"
-            rows={4}
-            className="border-border bg-background text-foreground focus:border-primary focus:ring-primary w-full rounded-lg border px-4 py-2 focus:ring-1 focus:outline-none"
-            placeholder="Your message..."
-          />
-        </div>
-        <button
-          type="submit"
-          className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-lg px-6 py-2 font-medium transition-colors"
-        >
-          Send Message
-        </button>
-      </form>
+
+      <div className="bg-card/70 border-border rounded-2xl border p-6 shadow-sm">
+        <p className="text-muted-foreground leading-relaxed">
+          I am always open to discussing new projects, creative ideas, or opportunities to be part
+          of your visions. Feel free to reach out to me!
+        </p>
+
+        <form className="mt-6 space-y-4">
+          <div>
+            <label htmlFor="name" className="text-foreground mb-1 block text-sm font-medium">
+              Name
+            </label>
+            <input
+              type="text"
+              id="name"
+              className="border-border bg-background text-foreground focus:border-primary focus:ring-primary w-full rounded-xl border px-4 py-2.5 focus:ring-1 focus:outline-none"
+              placeholder="Your name"
+            />
+          </div>
+          <div>
+            <label htmlFor="email" className="text-foreground mb-1 block text-sm font-medium">
+              Email
+            </label>
+            <input
+              type="email"
+              id="email"
+              className="border-border bg-background text-foreground focus:border-primary focus:ring-primary w-full rounded-xl border px-4 py-2.5 focus:ring-1 focus:outline-none"
+              placeholder="your.email@example.com"
+            />
+          </div>
+          <div>
+            <label htmlFor="message" className="text-foreground mb-1 block text-sm font-medium">
+              Message
+            </label>
+            <textarea
+              id="message"
+              rows={4}
+              className="border-border bg-background text-foreground focus:border-primary focus:ring-primary w-full rounded-xl border px-4 py-2.5 focus:ring-1 focus:outline-none"
+              placeholder="Your message..."
+            />
+          </div>
+          <button
+            type="submit"
+            className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-xl px-6 py-2.5 font-medium transition-colors"
+          >
+            Send Message
+          </button>
+        </form>
+      </div>
     </div>
   );
 }

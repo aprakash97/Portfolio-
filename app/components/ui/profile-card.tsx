@@ -60,7 +60,7 @@ export function ProfileCard({
           <span className="mx-3 font-medium">Location:</span> {location}
         </p>
 
-        <div className="flex gap-4 pt-4">
+        <div className="flex justify-evenly gap-4 pt-4">
           {github && (
             <a
               href={github}

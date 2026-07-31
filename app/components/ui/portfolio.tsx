@@ -24,7 +24,11 @@ const profileData = {
   instagram: 'https://www.instagram.com/prakash_anandakumar/',
 };
 
-export function Portfolio() {
+interface PortfolioProps {
+  theme: 'dark' | 'light';
+}
+
+export function Portfolio({ theme }: PortfolioProps) {
   const [activeTab, setActiveTab] = useState<TabType>('about');
 
   const renderContent = () => {
@@ -47,17 +51,25 @@ export function Portfolio() {
   };
 
   return (
-    <div className=" min-h-screen p-4 lg:p-8">
-      <div className="mx-auto grid max-w-7xl gap-6 lg:grid-cols-[400px_1fr] lg:gap-8">
+    <div className="w-full min-h-screen p-4 lg:p-8">
+      <div className="mx-auto grid w-full max-w-7xl gap-6 lg:grid-cols-[400px_1fr] lg:gap-8">
         {/* Left Section - Profile Card */}
         <aside className="h-fit lg:sticky lg:top-8">
           <ProfileCard {...profileData} />
         </aside>
 
         {/* Right Section - Content */}
-        <main className="flex flex-col">
-          <NavigationTabs activeTab={activeTab} onTabChange={setActiveTab} />
-          <div className="bg-accent/20 mt-6 flex-1 rounded-lg p-6 lg:p-8">{renderContent()}</div>
+        <main className="flex w-full flex-col">
+          <NavigationTabs activeTab={activeTab} onTabChange={setActiveTab} theme={theme} />
+          <div
+            className={
+              theme === 'dark'
+                ? 'mt-6 w-full flex-1 rounded-2xl border border-white/10 bg-zinc-900/80 p-6 shadow-[0_0_0_1px_rgba(255,255,255,0.03)] lg:p-8'
+                : 'mt-6 w-full flex-1 rounded-2xl border border-slate-200 bg-white/80 p-6 shadow-[0_10px_30px_rgba(15,23,42,0.06)] lg:p-8'
+            }
+          >
+            {renderContent()}
+          </div>
         </main>
       </div>
     </div>

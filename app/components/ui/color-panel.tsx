@@ -14,13 +14,7 @@ const ColorPanel = ({ changeTheme, theme }: ColorPanelProps) => {
     <div className="fixed top-1/2 left-0 z-50 -translate-y-1/2">
       <div className="flex">
         <div
-          className={
-            !toggleOpen
-              ? 'hidden'
-              : `flex min-w-25 justify-center gap-2 rounded-b-sm border-2 border-solid border-black transition delay-150 duration-300 ease-in-out ${
-                  theme === 'dark' ? 'bg-gray-500' : 'bg-background'
-                }`
-          }
+          className={`${toggleOpen === false ? 'hidden cursor-pointer' : 'pointer-events-auto flex min-w-25 justify-center gap-2 rounded-b-sm border-2 border-solid border-black'} ${theme === 'dark' ? 'bg-gray-500' : 'bg-background'}`}
         >
           <div className="min-w-5">
             <button

@@ -7,6 +7,7 @@ export type TabType = 'about' | 'experience' | 'education' | 'projects' | 'skill
 interface NavigationTabsProps {
   activeTab: TabType;
   onTabChange: (tab: TabType) => void;
+  theme: 'dark' | 'light';
 }
 
 const tabs: { id: TabType; label: string }[] = [
@@ -18,7 +19,7 @@ const tabs: { id: TabType; label: string }[] = [
   { id: 'contact', label: 'Contact' },
 ];
 
-export function NavigationTabs({ activeTab, onTabChange }: NavigationTabsProps) {
+export function NavigationTabs({ activeTab, onTabChange, theme }: NavigationTabsProps) {
   return (
     <nav className="border-border flex flex-wrap justify-center gap-1 border-b pb-2 lg:justify-start lg:gap-0">
       {tabs.map((tab) => (
@@ -28,13 +29,22 @@ export function NavigationTabs({ activeTab, onTabChange }: NavigationTabsProps) 
           className={clsx(
             'relative px-3 py-2 text-sm font-medium transition-colors lg:px-4 lg:text-base',
             activeTab === tab.id
-              ? 'text-foreground'
-              : 'text-muted-foreground hover:text-foreground',
+              ? theme === 'dark'
+                ? 'font-semibold text-white'
+                : 'text-foreground font-semibold'
+              : theme === 'dark'
+                ? 'text-muted-foreground hover:text-white'
+                : 'text-muted-foreground hover:text-foreground',
           )}
         >
           {tab.label}
           {activeTab === tab.id && (
-            <span className="bg-primary absolute right-0 bottom-0 left-0 h-0.5" />
+            <span
+              className={clsx(
+                'absolute right-0 bottom-0 left-0 h-0.5',
+                theme === 'dark' ? 'bg-white' : 'bg-primary',
+              )}
+            />
           )}
         </button>
       ))}
