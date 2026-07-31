@@ -47,7 +47,7 @@ export function Portfolio() {
   };
 
   return (
-    <div className="bg-background min-h-screen p-4 lg:p-8">
+    <div className=" min-h-screen p-4 lg:p-8">
       <div className="mx-auto grid max-w-7xl gap-6 lg:grid-cols-[400px_1fr] lg:gap-8">
         {/* Left Section - Profile Card */}
         <aside className="h-fit lg:sticky lg:top-8">

@@ -1,6 +1,6 @@
 'use client';
 
-import { Github, Linkedin, Instagram } from 'lucide-react';
+import { Github, Linkedin, Instagram, ArrowBigRightDash } from 'lucide-react';
 import Image from 'next/image';
 
 interface ProfileCardProps {
@@ -39,20 +39,25 @@ export function ProfileCard({
       </div>
 
       <div className="space-y-2">
-        <p className="text-card-foreground text-sm lg:text-base">
-          <span className="font-medium">Name:</span> {name}
+        <p className="text-card-foreground flex text-sm lg:text-base">
+          <ArrowBigRightDash className="mx-5" /> <span className="mx-3 font-medium">Name:</span>{' '}
+          {name}
         </p>
-        <p className="text-card-foreground text-sm lg:text-base">
-          <span className="font-medium">Position:</span> {title}
+        <p className="text-card-foreground flex text-sm lg:text-base">
+          <ArrowBigRightDash className="mx-5" />
+          <span className="mx-3 font-medium">Position:</span> {title}
         </p>
-        <p className="text-card-foreground text-sm lg:text-base">
-          <span className="font-medium">Phone:</span> {phone}
+        <p className="text-card-foreground flex text-sm lg:text-base">
+          <ArrowBigRightDash className="mx-5" />
+          <span className="mx-3 font-medium">Phone:</span> {phone}
         </p>
-        <p className="text-card-foreground text-sm lg:text-base">
-          <span className="font-medium">Email:</span> {email}
+        <p className="text-card-foreground flex text-sm lg:text-base">
+          <ArrowBigRightDash className="mx-5" /> <span className="mx-3 font-medium">Email:</span>{' '}
+          {email}
         </p>
-        <p className="text-card-foreground text-sm lg:text-base">
-          <span className="font-medium">Location:</span> {location}
+        <p className="text-card-foreground flex text-sm lg:text-base">
+          <ArrowBigRightDash className="mx-5" />
+          <span className="mx-3 font-medium">Location:</span> {location}
         </p>
 
         <div className="flex gap-4 pt-4">
