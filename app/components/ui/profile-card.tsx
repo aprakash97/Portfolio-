@@ -27,41 +27,38 @@ export function ProfileCard({
   linkedin,
   instagram,
 }: ProfileCardProps) {
+  const details = [
+    { label: 'Name', value: name },
+    { label: 'Position', value: title },
+    { label: 'Phone', value: phone },
+    { label: 'Email', value: email },
+    { label: 'Location', value: location },
+  ];
+
   return (
-    <div className="bg-card flex h-full min-h-0 flex-col justify-between overflow-y-auto rounded-lg p-6 lg:p-8">
+    <div className="bg-card border-border flex h-full min-h-0 flex-col justify-between rounded-3xl border p-6 shadow-xl shadow-black/[0.04] sm:p-7">
       <div>
-        <h1 className="text-2xl font-bold text-slate-900 lg:text-3xl dark:text-slate-900">
+        <p className="text-primary mb-2 text-xs font-semibold tracking-[0.2em] uppercase">Portfolio</p>
+        <h1 className="text-2xl font-bold tracking-tight text-card-foreground lg:text-3xl">
           {name}
         </h1>
         <p className="text-muted-foreground mt-1 text-lg">{title}</p>
 
-        <div className="relative mx-auto my-6 aspect-square w-full max-w-[220px] overflow-hidden rounded-full lg:my-8">
-          <div className="absolute inset-0 z-10 bg-gradient-to-br from-cyan-400/60 via-transparent to-rose-500/60" />
-          <Image src={imageUrl} alt={name} fill className="object-cover" crossOrigin="anonymous" />
+        <div className="relative mx-auto my-6 aspect-square w-full max-w-[220px] overflow-hidden rounded-full bg-primary/10 ring-4 ring-primary/10 lg:my-8">
+          <Image src={imageUrl} alt={name} fill priority sizes="(min-width: 1024px) 220px, 60vw" className="object-cover" />
         </div>
       </div>
 
-      <div className="space-y-2">
-        <p className="text-card-foreground flex text-sm lg:text-base">
-          <ArrowBigRightDash className="mx-5" /> <span className="mx-3 font-medium">Name:</span>{' '}
-          {name}
-        </p>
-        <p className="text-card-foreground flex text-sm lg:text-base">
-          <ArrowBigRightDash className="mx-5" />
-          <span className="mx-3 font-medium">Position:</span> {title}
-        </p>
-        <p className="text-card-foreground flex text-sm lg:text-base">
-          <ArrowBigRightDash className="mx-5" />
-          <span className="mx-3 font-medium">Phone:</span> {phone}
-        </p>
-        <p className="text-card-foreground flex text-sm lg:text-base">
-          <ArrowBigRightDash className="mx-5" /> <span className="mx-3 font-medium">Email:</span>{' '}
-          {email}
-        </p>
-        <p className="text-card-foreground flex text-sm lg:text-base">
-          <ArrowBigRightDash className="mx-5" />
-          <span className="mx-3 font-medium">Location:</span> {location}
-        </p>
+      <div className="min-w-0 space-y-2.5">
+        {details.map(({ label, value }) => (
+          <div key={label} className="grid min-w-0 grid-cols-[1rem_minmax(0,1fr)] items-start gap-x-3 text-sm lg:text-[0.9375rem]">
+            <ArrowBigRightDash aria-hidden="true" className="mt-0.5 h-4 w-4 text-primary" />
+            <div className="grid min-w-0 grid-cols-[4.5rem_minmax(0,1fr)] gap-x-2">
+              <span className="font-medium text-muted-foreground">{label}</span>
+              <span className="min-w-0 [overflow-wrap:anywhere]">{value}</span>
+            </div>
+          </div>
+        ))}
 
         <div className="flex justify-evenly gap-4 pt-4">
           {github && (
@@ -102,14 +99,12 @@ export function ProfileCard({
           )}
         </div>
         <Link
-          className="m-1 my-2 flex min-w-10 justify-center rounded-full bg-blue-700 p-2 text-center text-amber-50"
+          className="bg-primary text-primary-foreground hover:bg-primary/90 m-1 my-2 flex min-w-10 items-center justify-center gap-2 rounded-full px-4 py-2.5 text-center text-sm font-semibold transition-colors"
           href={'/Prakash_Anandakumar_CV.pdf'}
           target="_blank"
         >
-          <p>Resume</p>
-          <div className="mx-1 cursor-pointer">
-            <Download />
-          </div>
+          <p>Download résumé</p>
+          <Download className="h-4 w-4" />
         </Link>
       </div>
     </div>
