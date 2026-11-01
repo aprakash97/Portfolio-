@@ -15,9 +15,9 @@ import {
 const profileData = {
   name: 'Prakash Anandakumar',
   title: 'Software Engineer',
-  phone: '+94 76 700 4528',
+  phone: '+971 58 926 3784',
   email: 'prakashakrakr@gmail.com',
-  location: 'Colombo, Sri Lanka',
+  location: 'Dubai Silicon Oasis, Nadd Hessa, UAE',
   imageUrl: '/portfolio-image.jpg',
   github: 'https://github.com/aprakash97',
   linkedin: 'https://www.linkedin.com/in/prakash-anandakumar-8120931b9/',
