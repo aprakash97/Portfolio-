@@ -37,11 +37,11 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 
 ## Build setup for hosting (NextJS)
 
-Build Command - next build
-Output Directory - default(empty)
-Install Command - npm i(empty)
-Development Command - next dev --port $PORT
+- Build Command - next build
+- Output Directory - default(empty)
+- Install Command - npm i(empty)
+- Development Command - next dev --port $PORT
 
-Root Directory - ./
-Include files outside in the root directory in the Build Steps - Enabled
-Node js version - 24X
+- Root Directory - ./
+- Include files outside in the root directory in the Build Steps - Enabled
+- Node js version - 24X
