@@ -1,0 +1,391 @@
+:root {
+  --white: #f9faff;
+  --platinum: #e3e4e8;
+  --windsurf: #32779b;
+  --gray: #9a9a9a;
+  --onyx: #3c3d44;
+  --charcoal: #343c47;
+  --marina: #5a91c7;
+  --corners: 24px 0;
+  --corners-sm: 10px 0;
+  --base-font-size: 1rem;
+  --ld-bg: light-dark(var(--platinum), var(--charcoal));
+  --ld-txt: light-dark(var(--onyx), var(--white));
+  --ld-projects: light-dark(var(--white), #2e313d);
+  --ld-blue: light-dark(var(--windsurf), #6dadd0);
+}
+
+/* Headings should be used in order without skipping levels, creating a logical outline for screen readers. Only one H1 per page, followed by H2, H3, etc., in a hierarchical and sequential manner.
+
+  HTML - Screen Readers 
+  Visual Convenience we can work around on CSS
+*/
+
+html {
+  box-sizing: border-box;
+  color-scheme: light dark;
+}
+
+html:has(#mode-switcher #light:checked) {
+  color-scheme: light;
+}
+
+html:has(#mode-switcher #dark:checked) {
+  color-scheme: dark;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-size: var(--base-font-size);
+  font-family: "Inter", sans-serif;
+  background-color: var(--ld-bg);
+  color: var(--ld-txt);
+}
+
+.wrapper {
+  max-width: 1350px;
+  margin: 0 auto; /*horizontal centering - along with a defined max-width*/
+  padding: 1rem;
+}
+
+h1 {
+  margin: 0;
+  font-size: calc(var(--base-font-size) * 2.9);
+}
+
+h2 {
+  margin: 0;
+  font-size: var(--base-font-size);
+  color: var(--ld-blue);
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+}
+
+h3 {
+  margin: 0;
+}
+
+p {
+  line-height: 1.5;
+}
+
+a {
+  color: var(--ld-blue);
+}
+
+a:hover {
+  color: var(--marina);
+}
+
+img {
+  max-width: 100%;
+  border-radius: var(--corners);
+  box-shadow: 5px 5px 10px var(--charcoal);
+}
+
+/* svg social icon bar */
+.icons {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+ul svg {
+  width: 36px;
+  height: 36px;
+}
+
+.social {
+  fill: var(--ld-blue);
+}
+
+.social:hover {
+  fill: var(--marina);
+}
+
+/* About me layout */
+.main-article {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  text-align: center;
+}
+
+.main-article img {
+  margin: 0 auto;
+  object-fit: cover;
+  object-position: top;
+  height: 300px;
+  width: 300px;
+  overflow: hidden;
+}
+
+/* Footer */
+
+footer {
+  text-align: center;
+
+  .social {
+    fill: var(--ld-txt);
+  }
+}
+
+.footer-text {
+  line-height: 1.5;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.footer-text-box ul {
+  font-size: calc(var(--base-font-size) * 0.85);
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-text-box li {
+  line-height: 2;
+}
+
+.footer-header {
+  margin: 2rem 0;
+}
+
+/* Main Sections */
+main {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+main h2 {
+  padding: 2rem 0;
+}
+
+.project {
+  background-color: var(--ld-projects);
+  padding: 3rem;
+  border-radius: var(--corners);
+  display: flex;
+  flex-direction: column-reverse;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+}
+
+.projects {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 3rem;
+}
+
+.project ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.project li {
+  background-color: var(--marina);
+  color: var(--white);
+  padding: 0.5rem;
+  border-radius: var(--corners-sm);
+  font-size: calc(var(--base-font-size) * 0.85);
+}
+
+.project img {
+  grid-row: 1/2;
+  filter: drop-shadow(5px 5px 10px var(--onyx));
+}
+
+.img-border {
+  border: 1px solid var(--onyx);
+}
+
+/* Headers */
+/* fieldset {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  gap: 3rem;
+  max-width: 300px;
+  margin: 0 auto 2rem auto;
+} */
+
+@layer switch {
+  .radio-switch {
+    border: none;
+    padding: 0;
+    white-space: nowrap;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+
+  .radio-switch legend {
+    font-size: 2px;
+    opacity: 0;
+    position: absolute;
+  }
+
+  .radio-switch label {
+    display: inline-block;
+    line-height: 2;
+    position: relative;
+    z-index: 2;
+    font-size: calc(var(--base-font-size) * 0.8);
+  }
+
+  .radio-switch input {
+    opacity: 0;
+    position: absolute;
+  }
+
+  .radio-switch label:first-of-type {
+    padding-right: 5em;
+  }
+
+  .radio-switch label:last-child {
+    margin-left: -4.25em;
+    padding-left: 5em;
+  }
+
+  .radio-switch:focus-within label:first-of-type:after {
+    box-shadow:
+      0 0 0 2px var(--white),
+      0 0 0 4px var(--marina);
+  }
+
+  /* making the switch UI.  */
+  .radio-switch label:first-of-type:before,
+  .radio-switch label:first-of-type:after {
+    border: 1px solid var(--onyx);
+    content: "";
+    height: 2em;
+    overflow: hidden;
+    pointer-events: none;
+    position: absolute;
+    vertical-align: middle;
+  }
+
+  .radio-switch label:first-of-type:before {
+    background: var(--white);
+    border: 1px solid var(--onyx);
+    border-radius: 100%;
+    position: absolute;
+    right: -0.075em;
+    transform: translateX(0em);
+    transition: transform 0.2s ease-in-out;
+    width: 2em;
+    z-index: 2;
+  }
+
+  .radio-switch label:first-of-type:after {
+    background: #777;
+    border-radius: 1em;
+    margin: 0 1em;
+    transition: background 0.2s ease-in-out;
+    width: 4em;
+  }
+
+  .radio-switch input:first-of-type:checked ~ label:first-of-type:after {
+    background: var(--marina);
+  }
+
+  .radio-switch input:first-of-type:checked ~ label:first-of-type:before {
+    transform: translateX(-2em);
+  }
+
+  .radio-switch input:last-of-type:checked ~ label:last-of-type {
+    z-index: 1;
+  }
+}
+
+@media (min-width: 750px) {
+  :root {
+    --base-font-size: 1.125rem;
+  }
+
+  /* h1 {
+    margin-left: -3px; /* margins can have */
+
+  .wrapper {
+    padding: 2rem 5rem;
+  }
+
+  .main-article {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    text-align: left;
+  }
+
+  .main-article img {
+    margin: 0 0 0 auto;
+    max-height: 500px;
+    object-fit: contain;
+    object-position: none;
+    /* object-position: none; */
+    height: auto;
+    width: auto;
+    overflow: auto;
+  }
+
+  .project img:hover {
+    transform: scale(1.5);
+  }
+
+  .icons {
+    justify-content: flex-start;
+  }
+
+  footer {
+    text-align: left;
+  }
+
+  .footer-text {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .footer-text-box {
+    margin: 0.5rem 3rem;
+    text-align: center;
+  }
+
+  .radio-switch {
+    justify-content: flex-end;
+  }
+}
+/* projects */
+
+@media (min-width: 850px) {
+  main {
+    text-align: left;
+  }
+
+  .project {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+
+  .project img {
+    grid-row: auto;
+  }
+
+  .project ul {
+    justify-content: flex-start;
+  }
+}
+
+/* radio switch */
